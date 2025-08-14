@@ -1,7 +1,8 @@
 from backend.src.models.sqlite.entities.tables import Tables
+from backend.src.models.sqlite.interfaces.tables_repository import TableInterface
 from sqlalchemy.orm.exc import NoResultFound
 
-class TableRepository:
+class TableRepository(TableInterface):
     def __init__(self, db_connection):
         self.__db_connection = db_connection
 

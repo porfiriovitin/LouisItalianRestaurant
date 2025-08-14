@@ -1,7 +1,7 @@
 from backend.src.models.sqlite.settings.base import Base
 from sqlalchemy import Column, INTEGER, VARCHAR, ForeignKey
 
-class Reservation(Base):
+class ReservationTable(Base):
     __tablename__ = "reservation"
 
     reservation_id = Column(INTEGER, primary_key=True)

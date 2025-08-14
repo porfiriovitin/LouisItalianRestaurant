@@ -1,12 +1,13 @@
 from backend.src.models.sqlite.entities.customers import CustomerTable
+from backend.src.models.sqlite.interfaces.customer_repository import CustomerRepositoryInterface
 from sqlalchemy.orm.exc import NoResultFound
 
-class CustomerRepository:
+class CustomerRepository(CustomerRepositoryInterface):
     def __init__(self, db_connection):
-        self.db_connection = db_connection
+        self.__db_connection = db_connection
 
     def insert_customer(self, customer_name, cpf, cellphone):
-        with self.db_connection as database:
+        with self.__db_connection as database:
             try:
                 customer_data = CustomerTable(
                     customer_name = customer_name,
@@ -19,8 +20,8 @@ class CustomerRepository:
                 database.session.rollback()
                 raise e
             
-    def get_customer(self, customer_id:int):
-        with self.db_connection as database:
+    def get_customer_by_id(self, customer_id:int):
+        with self.__db_connection as database:
             try:
                 customer = (
                     database.session
@@ -35,3 +36,11 @@ class CustomerRepository:
                 return customer
             except NoResultFound:
                 return None
+    
+    def list_customers(self):
+        with self.__db_connection as database:
+            try:
+                customers = database.session.query(CustomerTable).all()
+                return customers
+            except NoResultFound:
+                return "No customers found"
