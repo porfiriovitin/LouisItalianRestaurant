@@ -14,3 +14,25 @@ What if the location where Michael Corleone famously shoots Virgil Sollozzo and 
 **Database:** Sqlite
 
 **Architeture:** MVC (Model-view-controller)
+
+
+## How to Start
+
+1. **Clone the repository**
+   ```sh
+   git clone https://github.com/seu-usuario/seu-repositorio.git
+   cd LouisItalianRestaurant
+   ```
+
+2. **Install the dependencies**
+   ```sh
+   pip install -r backend/requirements.txt
+   ```
+
+3. **Start the database**
+   ```sh
+   sqlite3 backend/database.db < backend/init/schema.sql
+   ```
+
+4. **Start Flask server**
+   > In production...
