@@ -12,3 +12,6 @@ class CustomerRepositoryInterface(ABC):
 
     def list_customers(self):
         pass
+
+    def delete_customer(self, customer_id:int) -> None:
+        pass

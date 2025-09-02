@@ -44,3 +44,17 @@ class CustomerRepository(CustomerRepositoryInterface):
                 return customers
             except NoResultFound:
                 return "No customers found"
+            
+    def delete_customer(self, customer_id:int):
+        with self.__db_connection as database:
+            try:
+                customer = (
+                    database.session
+                    .query(CustomerTable)
+                    .filter(CustomerTable.customer_id == customer_id)
+                    .one()
+                )
+                database.session.delete(customer)
+                database.session.commit()
+            except NoResultFound:
+                return None
