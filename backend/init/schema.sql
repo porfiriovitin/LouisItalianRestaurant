@@ -22,3 +22,6 @@ CREATE TABLE IF NOT EXISTS "reservation"(
 -- Inserir as mesas disponíveis
 INSERT INTO "tables" (table_number)
 VALUES (1), (2), (3), (4), (5), (6), (7);
+
+INSERT INTO "customers" (customer_name, cpf, cellphone) 
+VALUES ("Michael Corleone", "123.456.789-10", "11 1234 5678");
