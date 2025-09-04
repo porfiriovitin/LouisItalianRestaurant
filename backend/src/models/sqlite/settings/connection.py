@@ -1,10 +1,12 @@
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
+import os
+
 
 class DBConnectionHandler:
     '''Logic for Db Connection'''
     def __init__(self):
-        self.__connection_string = "sqlite:///backend/database.db"
+        self.__connection_string = f"sqlite:///database.db"
         self.__engine = None 
         self.session = None 
 

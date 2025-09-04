@@ -4,7 +4,7 @@ from src.views.http_types.http_request import HttpRequest
 from src.views.http_types.http_response import HttpResponse
 from src.views.interfaces.view_interface import ViewInterface
 
-class CustomerCreator(ViewInterface):
+class CustomerCreatorView(ViewInterface):
     def __init__(self, controller: CustomerCreatorInterface) -> None:
         self._controller = controller
 

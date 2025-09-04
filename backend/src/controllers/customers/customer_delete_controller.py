@@ -1,6 +1,6 @@
-from backend.src.models.sqlite.entities.customers import CustomerTable
-from backend.src.models.sqlite.interfaces.customer_repository import CustomerRepositoryInterface
-from backend.src.controllers.customers.interfaces.customer_delete_controller import CustomerDeleteInterface
+from src.models.sqlite.entities.customers import CustomerTable
+from src.models.sqlite.interfaces.customer_repository import CustomerRepositoryInterface
+from src.controllers.customers.interfaces.customer_delete_controller import CustomerDeleteInterface
 from src.errors.error_types.http_not_found import HttpNotFoundError
 
 class CustomerDeleteController(CustomerDeleteInterface):

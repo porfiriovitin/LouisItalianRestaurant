@@ -1,6 +1,6 @@
-from backend.src.models.sqlite.entities.reservation import ReservationTable
-from backend.src.models.sqlite.entities.tables import Tables
-from backend.src.models.sqlite.interfaces.reservation_repository import ReservationRepositoryInterface
+from src.models.sqlite.entities.reservation import ReservationTable
+from src.models.sqlite.entities.tables import Tables
+from src.models.sqlite.interfaces.reservation_repository import ReservationRepositoryInterface
 from sqlalchemy.orm.exc import NoResultFound
 
 

@@ -1,4 +1,4 @@
-from backend.src.models.sqlite.settings.base import Base
+from src.models.sqlite.settings.base import Base
 from sqlalchemy import Column, VARCHAR, INTEGER
 
 class CustomerTable(Base):

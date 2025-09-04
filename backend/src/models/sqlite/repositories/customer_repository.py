@@ -1,5 +1,5 @@
-from backend.src.models.sqlite.entities.customers import CustomerTable
-from backend.src.models.sqlite.interfaces.customer_repository import CustomerRepositoryInterface
+from src.models.sqlite.entities.customers import CustomerTable
+from src.models.sqlite.interfaces.customer_repository import CustomerRepositoryInterface
 from sqlalchemy.orm.exc import NoResultFound
 
 class CustomerRepository(CustomerRepositoryInterface):

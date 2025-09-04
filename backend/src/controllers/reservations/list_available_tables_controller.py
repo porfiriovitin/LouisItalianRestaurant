@@ -1,5 +1,5 @@
 import re
-from src.controllers.reservations.interfaces.list_available_tables import ListAvailableTablesInterface
+from src.controllers.reservations.interfaces.list_available_tables_controller import ListAvailableTablesInterface
 from src.models.sqlite.interfaces.reservation_repository import ReservationRepositoryInterface
 from src.errors.error_types.http_bad_request import HttpBadRequestError
 from src.errors.error_types.http_not_found import HttpNotFoundError
@@ -25,7 +25,7 @@ class ListAvailableTablesController(ListAvailableTablesInterface):
         return {
             "AvailableTables": [
                 {
-                    "table_number": table["table_number"],
+                    "table_number": table.table_number,
                 } for table in available_tables
             ]
         }

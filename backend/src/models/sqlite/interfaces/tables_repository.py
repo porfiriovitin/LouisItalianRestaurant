@@ -1,8 +1,8 @@
 from abc import ABC, abstractmethod
-from backend.src.models.sqlite.entities.tables import Tables
+from src.models.sqlite.entities.tables import Tables
 
 class TableInterface(ABC):
     
     @abstractmethod
-    def ListTables(self) -> list[Tables]:
+    def GetTableNumbers(self) -> list[Tables]:
         pass

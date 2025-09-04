@@ -2,12 +2,9 @@ from pydantic import BaseModel, constr, ValidationError
 from src.views.http_types.http_request import HttpRequest
 from src.errors.error_types.http_unprocessable_entity import HttpUnprocessableEntityError
 
-def customer_creator_validator(http_request: HttpRequest) -> None:
+def ListAvailableTablesValidator(http_request: HttpRequest) -> None:
     class BodyData(BaseModel):
-        customer_name: constr(min_length=1) #type: ignore
-        cpf: constr(min_length=11) #type: ignore
-        cellphone: constr(min_length=10) #type: ignore
-
+        booking_date: constr(min_length=10, max_length=10) #type: ignore
 
     if not isinstance(http_request.body, dict):
         raise HttpUnprocessableEntityError("Request body must be a JSON object.")

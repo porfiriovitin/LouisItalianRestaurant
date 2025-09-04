@@ -1,8 +1,7 @@
-import re
-from backend.src.controllers.customers.controllers.customer_lister_controller import CustomerListerController
-from backend.src.models.sqlite.interfaces.customer_repository import CustomerRepositoryInterface
+from src.controllers.customers.interfaces.customer_lister_controller import CustomerListerControllerInterface
+from src.models.sqlite.interfaces.customer_repository import CustomerRepositoryInterface
 
-class CustomerListerController(CustomerListerController):
+class CustomerListerController(CustomerListerControllerInterface):
     def __init__(self, customer_repository: CustomerRepositoryInterface):
         self.__customer_repository = customer_repository
 

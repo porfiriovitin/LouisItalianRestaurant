@@ -1,5 +1,5 @@
-from backend.src.models.sqlite.settings.base import Base
-from sqlalchemy import Column, INTEGER, VARCHAR, ForeignKey
+from src.models.sqlite.settings.base import Base
+from sqlalchemy import Column, INTEGER
 
 class Tables(Base):
     __tablename__ = "tables"
